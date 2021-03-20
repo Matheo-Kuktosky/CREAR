@@ -8,11 +8,6 @@ public class Player : MonoBehaviour
     public Vector2 speed = new Vector2(2, 2);
     public Rigidbody2D rb;
 
-    void Start()
-    {
-
-    }
-
     void handleMovement()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
@@ -23,7 +18,8 @@ public class Player : MonoBehaviour
         {
             movement = new Vector2(speed.x * inputX, 0);
         }
-        else if (inputY != 0)
+
+        if (inputY != 0)
         {
             movement = new Vector2(0, speed.y * inputY);
         }
